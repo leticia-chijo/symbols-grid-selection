@@ -2,13 +2,25 @@
 
 import { Flex, Box } from "smbls"
 
+const COLS = 16
+const ROWS = 8
+
 // Helper Functions
 
 const getBorderRadius = (row, col, totalRows, totalCols) => {
+  if (totalRows === 1 && totalCols === 1) return "Y"
+
+  if (totalCols === 1 && row === 0) return "Y Y W W"
+  if (totalCols === 1 && row === totalRows - 1) return "W W Y Y"
+
+  if (totalRows === 1 && col === 0) return "Y W W Y"
+  if (totalRows === 1 && col === totalCols - 1) return "W Y Y W"
+
   if (row === 0 && col === 0) return "Y W W W"
   if (row === 0 && col === totalCols - 1) return "W Y W W"
   if (row === totalRows - 1 && col === 0) return "W W W Y"
   if (row === totalRows - 1 && col === totalCols - 1) return "W W Y W"
+
   return "W"
 }
 
@@ -54,7 +66,7 @@ const handleCellClick = (element, state, i) => {
 }
 
 const createGridCells = (_, state) => {
-  let cells = {}
+  let cells = {} 
 
   for (let i = 0; i < state.cols * state.rows; i++) {
     const row = Math.floor(i / state.cols)
@@ -135,7 +147,7 @@ export const Footer = {
 }
 
 export const Modal = {
-  state: { cols: 5, rows: 5, selectedCol: 0, selectedRow: 0 },
+  state: { cols: COLS, rows: ROWS, selectedCol: 0, selectedRow: 0 },
   props: {
     minWidth: 350,
     maxHeight: "90vh",
