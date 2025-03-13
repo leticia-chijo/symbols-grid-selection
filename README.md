@@ -1,19 +1,21 @@
-# Symbols Starter Kit
-Example dev setup (boilerplate) to use [DOMQL](https://github.com/domql/domql). You can also check live editor [Playground](https://domql.com/playground/).
+# Symbols Grid Selection
+A flexible Grid Selection component designed with [DOMQL](https://github.com/domql/domql) and [smbls](https://github.com/symbo-ls/smbls). This component allows users to select a range of cells in a grid and dynamically updates based on user interaction.
 
-### Setup
+![image](assets/GridSelection.gif)
 
-1. Clone the repo
-```
-git clone git@github.com:symbo-ls/starter-kit.git
-```
+## Setup
 
-2. Install scripts
-```
-yarn
+### Clone the repo
+```bash
+$ git clone https://github.com/leticia-chijo/symbols-grid-selection.git
 ```
 
-3. Run the project
+### Install scripts
+```bash
+$ yarn
 ```
-yarn start
+
+### Run the project
+```bash
+$ yarn start
 ```
